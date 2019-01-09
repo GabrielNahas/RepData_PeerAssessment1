@@ -293,15 +293,7 @@ breaks=5)</code></pre>
 </ol>
 <pre class="r"><code>data_with_days &lt;- data.frame(data_without_NA, as.character(weekdays(as.Date(rawdata$date))), stringsAsFactors = FALSE)
 colnames(data_with_days)[4] &lt;- &quot;day&quot;
-head(data_with_days)</code></pre>
-<pre><code>##       steps       date interval    day
-## 1 1.7169811 2012-10-01        0 Monday
-## 2 0.3396226 2012-10-01        5 Monday
-## 3 0.1320755 2012-10-01       10 Monday
-## 4 0.1509434 2012-10-01       15 Monday
-## 5 0.0754717 2012-10-01       20 Monday
-## 6 2.0943396 2012-10-01       25 Monday</code></pre>
-<pre class="r"><code>data_with_days$day[data_with_days$day == &quot;Saturday&quot; | data_with_days$day == &quot;Sunday&quot;] &lt;- &quot;weekend&quot; 
+data_with_days$day[data_with_days$day == &quot;Saturday&quot; | data_with_days$day == &quot;Sunday&quot;] &lt;- &quot;weekend&quot; 
 data_with_days$day[data_with_days$day != &quot;weekend&quot;] &lt;- &quot;weekday&quot; 
 data_with_days$day &lt;- as.factor(data_with_days$day)</code></pre>
 <ol start="2" style="list-style-type: decimal">

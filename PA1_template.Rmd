@@ -135,7 +135,6 @@ For this part the \color{red}{\verb|weekdays()|}weekdays() function may be of so
 ```{r}
 data_with_days <- data.frame(data_without_NA, as.character(weekdays(as.Date(rawdata$date))), stringsAsFactors = FALSE)
 colnames(data_with_days)[4] <- "day"
-head(data_with_days)
 data_with_days$day[data_with_days$day == "Saturday" | data_with_days$day == "Sunday"] <- "weekend" 
 data_with_days$day[data_with_days$day != "weekend"] <- "weekday" 
 data_with_days$day <- as.factor(data_with_days$day)
